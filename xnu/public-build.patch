@@ -1,0 +1,11 @@
+--- a/config/newvers.pl
++++ b/config/newvers.pl
+@@ -59,7 +59,7 @@
+ $BUILD_DATE =~ s/[\n\t]//g;
+ my $BUILD_CONFIG = "unknown";
+ $BUILD_CONFIG = $ENV{'CURRENT_KERNEL_CONFIG_LC'} if defined($ENV{'CURRENT_KERNEL_CONFIG_LC'});
+-my $BUILDER=`whoami`;
++my $BUILDER=$ENV{'KERNEL_BUILDER'} || `whoami`;
+ $BUILDER =~ s/[\n\t]//g;
+ my $RC_STRING = $ENV{'RC_ProjectNameAndSourceVersion'} . "~" . $ENV{'RC_ProjectBuildVersion'} if defined($ENV{'RC_XBS'});
+ 

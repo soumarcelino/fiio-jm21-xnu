@@ -1,0 +1,21 @@
+# drivers/input/conf: touch, buttons, and the queue they post to.
+# CONFIG_HAKIOS_<NAME>=y in a defconfig builds a driver into the kernel; "standard" files are always built.
+# tools/hakios-config.py reads this file; docs/drivers-config.md says what each word means and how it reaches XNU.
+
+standard bsd/dev/hakios.input.c
+	help    /dev/hakios-touch, the queue of touches and buttons, and where the phone's drivers are started from
+
+driver VIRTIO_INPUT
+	file    bsd/dev/hakios.virtio_input.c
+	help    QEMU's virtio tablet and keyboard as the touch screen and the buttons (virtio_input=1). QEMU only
+
+
+driver BUTTONS
+	file    bsd/dev/hakios.buttons.c
+	help    the power and volume keys, read from the PMIC through the SPMI arbiter (buttons=1)
+
+standard bsd/dev/hakios.jm21_touch.c
+	help    FiiO JM21 GT967 on GPIO I2C (jm21_ios=1 jm21_touch=1)
+
+standard bsd/dev/hakios.jm21_buttons.c
+	help    FiiO JM21 power (PM6125 PON) and volume keys (TLMM 96/97) (jm21_ios=1 jm21_buttons=1)

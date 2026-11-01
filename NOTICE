@@ -1,0 +1,22 @@
+This source snapshot derives from HakiOS and Apple XNU.
+Original copyright and license notices are retained in source files.
+
+- XNU modifications (xnu/, drivers/): Apple Public Source License 2.0;
+  full text in LICENSE.APSL. Upstream XNU and HFS are fetched from Apple's
+  apple-oss-distributions repositories at pinned revisions (SOURCE.json).
+- HakiOS loader, adapters and build tools: MIT, see LICENSE.
+- libdeflate: MIT, see xnu/files/bsd/miscfs/apfs/libdeflate/COPYING.
+- libzbitmap: GPL-2.0+ OR MIT, used under MIT; keep its per-file notices.
+- Wi-Fi compatibility headers: FreeBSD/Linux licenses retained per file;
+  fetched ath10k/ath11k sources retain BSD/ISC and other original notices.
+- Mesa adaptations and DRM compatibility headers retain their source notices;
+  upstream Mesa is fetched at build time and carries its own licenses.
+- Loader APFS image generator derives from the companion HakiOS tools.
+- Generated loader artwork uses Pillow's bundled font; no fonts or Apple
+  artwork assets are distributed. Apple trademarks belong to Apple.
+
+Proprietary OS/SDK images, vendor firmware (including unrelated FocalTech
+firmware), private keys and device data are excluded. This notice does not
+license those external inputs or grant rights to redistribute build images
+containing them. This is an experimental community port, unaffiliated with
+Apple, FiiO or Qualcomm.

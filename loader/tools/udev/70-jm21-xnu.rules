@@ -1,0 +1,2 @@
+# Grant the active local desktop session access to this diagnostic monitor.
+SUBSYSTEM=="usb", ENV{DEVTYPE}=="usb_device", ATTR{idVendor}=="1209", ATTR{idProduct}=="4a21", ATTR{serial}=="JM21-XNU-1", MODE="0660", TAG+="uaccess"

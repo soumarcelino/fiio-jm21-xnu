@@ -1,0 +1,24 @@
+{
+  "format": 1,
+  "xnu": {
+    "tag": "xnu-8796.121.2",
+    "commit": "c54f35ca767986246321eb901baf8f5ff7923f6a"
+  },
+  "hfs": {
+    "tag": "hfs-627.100.6",
+    "commit": "31d5ec238dfab485e78a9a30b8b92d13e8914f03"
+  },
+  "snapshot": {
+    "kernel_base": "928d0e630edc810af8ab768f09055535ccf76b41",
+    "loader_base": "a662e0416bed75acde6f166e1d006581d8bbd7a3",
+    "includes_working_tree_changes": true
+  },
+  "excluded": [
+    "Git history",
+    "private documentation and logs",
+    "firmware and OS/SDK binaries",
+    "device identity and network configuration",
+    "unrelated FocalTech SPI driver and firmware",
+    "test suites"
+  ]
+}

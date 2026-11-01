@@ -1,0 +1,12 @@
+# Metal frontend sharing the proven hardware-specific Gallium backend.
+hakios_gallium = shared_library(
+  'HakiosGallium',
+  files('../../../compiler/air/hakios_gallium.c'),
+  include_directories : [inc_include, inc_src, inc_mapi, inc_mesa, inc_gallium,
+                         inc_gallium_aux, inc_gallium_winsys_sw, inc_gallium_winsys,
+                         include_directories('../../drivers')],
+  dependencies : [dep_m, idep_air, idep_mesautil, driver_freedreno, dep_libdrm],
+  link_with : [libgallium, libgalliumvl_stub, libfreedrenowinsys],
+  build_by_default : false,
+  install : false,
+)
